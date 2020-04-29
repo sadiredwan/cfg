@@ -1,5 +1,5 @@
-import keras
 import math
+import keras
 import pickle
 import numpy as np
 import tensorflow as tf
@@ -52,33 +52,33 @@ if __name__ == '__main__':
 	x = MaxPool2D((3, 3), padding='same', strides=(2, 2), name='max_pool_2_3x3/2')(x)
 
 	x = inception_module(x,
-						 filters_1x1=64,
-						 filters_3x3_reduce=96,
-						 filters_3x3=128,
-						 filters_5x5_reduce=16,
-						 filters_5x5=32,
-						 filters_pool_proj=32,
-						 name='inception_3a')
+		filters_1x1=64,
+		filters_3x3_reduce=96,
+		filters_3x3=128,
+		filters_5x5_reduce=16,
+		filters_5x5=32,
+		filters_pool_proj=32,
+		name='inception_3a')
 
 	x = inception_module(x,
-					 filters_1x1=128,
-					 filters_3x3_reduce=128,
-					 filters_3x3=192,
-					 filters_5x5_reduce=32,
-					 filters_5x5=96,
-					 filters_pool_proj=64,
-					 name='inception_3b')
+		filters_1x1=128,
+		filters_3x3_reduce=128,
+		filters_3x3=192,
+		filters_5x5_reduce=32,
+		filters_5x5=96,
+		filters_pool_proj=64,
+		name='inception_3b')
 
 	x = MaxPool2D((3, 3), padding='same', strides=(2, 2), name='max_pool_3_3x3/2')(x)
 
 	x = inception_module(x,
-					 filters_1x1=192,
-					 filters_3x3_reduce=96,
-					 filters_3x3=208,
-					 filters_5x5_reduce=16,
-					 filters_5x5=48,
-					 filters_pool_proj=64,
-					 name='inception_4a')
+		filters_1x1=192,
+		filters_3x3_reduce=96,
+		filters_3x3=208,
+		filters_5x5_reduce=16,
+		filters_5x5=48,
+		filters_pool_proj=64,
+		name='inception_4a')
 
 	x1 = AveragePooling2D((5, 5), strides=3)(x)
 	x1 = Conv2D(128, (1, 1), padding='same', activation='relu')(x1)
@@ -88,31 +88,31 @@ if __name__ == '__main__':
 	x1 = Dense(3, activation='softmax', name='auxilliary_output_1')(x1)
 
 	x = inception_module(x,
-					 filters_1x1=160,
-					 filters_3x3_reduce=112,
-					 filters_3x3=224,
-					 filters_5x5_reduce=24,
-					 filters_5x5=64,
-					 filters_pool_proj=64,
-					 name='inception_4b')
+		filters_1x1=160,
+		filters_3x3_reduce=112,
+		filters_3x3=224,
+		filters_5x5_reduce=24,
+		filters_5x5=64,
+		filters_pool_proj=64,
+		name='inception_4b')
 
 	x = inception_module(x,
-					 filters_1x1=128,
-					 filters_3x3_reduce=128,
-					 filters_3x3=256,
-					 filters_5x5_reduce=24,
-					 filters_5x5=64,
-					 filters_pool_proj=64,
-					 name='inception_4c')
+		filters_1x1=128,
+		filters_3x3_reduce=128,
+		filters_3x3=256,
+		filters_5x5_reduce=24,
+		filters_5x5=64,
+		filters_pool_proj=64,
+		name='inception_4c')
 
 	x = inception_module(x,
-					 filters_1x1=112,
-					 filters_3x3_reduce=144,
-					 filters_3x3=288,
-					 filters_5x5_reduce=32,
-					 filters_5x5=64,
-					 filters_pool_proj=64,
-					 name='inception_4d')
+		filters_1x1=112,
+		filters_3x3_reduce=144,
+		filters_3x3=288,
+		filters_5x5_reduce=32,
+		filters_5x5=64,
+		filters_pool_proj=64,
+		name='inception_4d')
 
 	x2 = AveragePooling2D((5, 5), strides=3)(x)
 	x2 = Conv2D(128, (1, 1), padding='same', activation='relu')(x2)
@@ -122,33 +122,33 @@ if __name__ == '__main__':
 	x2 = Dense(3, activation='softmax', name='auxilliary_output_2')(x2)
 
 	x = inception_module(x,
-					 filters_1x1=256,
-					 filters_3x3_reduce=160,
-					 filters_3x3=320,
-					 filters_5x5_reduce=32,
-					 filters_5x5=128,
-					 filters_pool_proj=128,
-					 name='inception_4e')
+		filters_1x1=256,
+		filters_3x3_reduce=160,
+		filters_3x3=320,
+		filters_5x5_reduce=32,
+		filters_5x5=128,
+		filters_pool_proj=128,
+		name='inception_4e')
 
 	x = MaxPool2D((3, 3), padding='same', strides=(2, 2), name='max_pool_4_3x3/2')(x)
 
 	x = inception_module(x,
-					 filters_1x1=256,
-					 filters_3x3_reduce=160,
-					 filters_3x3=320,
-					 filters_5x5_reduce=32,
-					 filters_5x5=128,
-					 filters_pool_proj=128,
-					 name='inception_5a')
+		filters_1x1=256,
+		filters_3x3_reduce=160,
+		filters_3x3=320,
+		filters_5x5_reduce=32,
+		filters_5x5=128,
+		filters_pool_proj=128,
+		name='inception_5a')
 
 	x = inception_module(x,
-					 filters_1x1=384,
-					 filters_3x3_reduce=192,
-					 filters_3x3=384,
-					 filters_5x5_reduce=48,
-					 filters_5x5=128,
-					 filters_pool_proj=128,
-					 name='inception_5b')
+		filters_1x1=384,
+		filters_3x3_reduce=192,
+		filters_3x3=384,
+		filters_5x5_reduce=48,
+		filters_5x5=128,
+		filters_pool_proj=128,
+		name='inception_5b')
 
 	x = GlobalAveragePooling2D(name='avg_pool_5_3x3/1')(x)
 	x = Dropout(0.4)(x)
