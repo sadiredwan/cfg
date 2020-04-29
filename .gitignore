@@ -1,0 +1,7 @@
+data/
+X_train.pickle
+y_train.pickle
+X.pickle
+y.pickle
+X_inception.pickle
+y_inception.pickle
