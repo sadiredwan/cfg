@@ -48,10 +48,10 @@ if __name__ == '__main__':
 
 	# X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.2, random_state=2)
 
-	pickle_out = open("X_inception.pickle", "wb")
+	pickle_out = open("X_rgb.pickle", "wb")
 	pickle.dump(X, pickle_out)
 	pickle_out.close()
 
-	pickle_out = open("y_inception.pickle", "wb")
+	pickle_out = open("y_rgb.pickle", "wb")
 	pickle.dump(y, pickle_out)
 	pickle_out.close()

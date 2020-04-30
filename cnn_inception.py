@@ -36,10 +36,9 @@ def decay(epoch, steps=100):
 
 if __name__ == '__main__':
 	num_classes = 3
-	X = pickle.load(open("X_inception.pickle", "rb"))
-	y = pickle.load(open("y_inception.pickle", "rb"))
+	X = pickle.load(open("X_rgb.pickle", "rb"))
+	y = pickle.load(open("y_rgb.pickle", "rb"))
 	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=2)
-	# X_train =  X_train.reshape(-1, 128, 128, 3)
 	
 	kernel_init = keras.initializers.glorot_uniform()
 	bias_init = keras.initializers.Constant(value=0.2)
