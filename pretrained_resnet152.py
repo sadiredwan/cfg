@@ -1,4 +1,6 @@
+import cv2
 import pickle
+import numpy as np
 from keras.models import Model
 from keras.optimizers import SGD
 from sklearn.metrics import log_loss
@@ -15,7 +17,6 @@ def resnet152_model(img_rows, img_cols, color_type=1, num_classes=None):
 	model.load_weights(weights_path, by_name=True)
 	sgd = SGD(lr=1e-3, decay=1e-6, momentum=0.9, nesterov=True)
 	model.compile(optimizer=sgd, loss='categorical_crossentropy', metrics=['accuracy'])
-
 	return model
 
 
@@ -35,5 +36,9 @@ if __name__ == '__main__':
 		verbose=1,
 		validation_data=(X_test, y_test),)
 
+	# img = cv2.resize(cv2.imread('data/class1/cat.1.jpg'), (128, 128)).astype(np.float32)
+	# img = np.expand_dims(img, axis=0)
+	# out = model.predict(img)
+	# print(np.argmax(out))
 	# predictions_valid = model.predict(X_test, batch_size=batch_size, verbose=1)
 	# score = log_loss(y_test, predictions_valid)
