@@ -11,7 +11,7 @@ from keras.layers.core import Layer
 from keras.callbacks import LearningRateScheduler
 from sklearn.model_selection import train_test_split
 from keras.layers import Conv2D, MaxPool2D, Dropout,\
-Dense, Input, concatenate,GlobalAveragePooling2D, AveragePooling2D, Flatten
+Dense, Input, concatenate, GlobalAveragePooling2D, AveragePooling2D, Flatten
 
 
 def inception_module(x, filters_1x1, filters_3x3_reduce, filters_3x3, filters_5x5_reduce, filters_5x5, filters_pool_proj, name=None):
