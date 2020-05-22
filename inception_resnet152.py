@@ -163,4 +163,4 @@ if __name__ == '__main__':
 		nb_epoch=epochs,
 		shuffle=True,
 		verbose=1,
-		validation_data=(X_test, y_test),)
+		validation_data=(X_test, y_test))

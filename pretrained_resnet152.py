@@ -34,11 +34,4 @@ if __name__ == '__main__':
 		nb_epoch=epochs,
 		shuffle=True,
 		verbose=1,
-		validation_data=(X_test, y_test),)
-
-	# img = cv2.resize(cv2.imread('data/class1/cat.1.jpg'), (128, 128)).astype(np.float32)
-	# img = np.expand_dims(img, axis=0)
-	# out = model.predict(img)
-	# print(np.argmax(out))
-	# predictions_valid = model.predict(X_test, batch_size=batch_size, verbose=1)
-	# score = log_loss(y_test, predictions_valid)
+		validation_data=(X_test, y_test))
